@@ -1,5 +1,6 @@
 package com.dev.entity;
 
+import com.dev.dto.BoardDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,8 +25,18 @@ public class BoardEntity extends BaseEntity {
     private String boardTitle;
 
     @Column(length = 500)
-    String boardContent;
+    String boardContents;
 
     @Column
     private int boardHits;
+
+    public static BoardEntity toBoardEntity(BoardDTO boardDTO) {
+        BoardEntity boardEntity = new BoardEntity();
+        boardEntity.setBoardWriter(boardDTO.getBoardWriter());
+        boardEntity.setBoardPass(boardDTO.getBoardPass());
+        boardEntity.setBoardTitle(boardDTO.getBoardTitle());
+        boardEntity.setBoardContents(boardDTO.getBoardContents());
+        boardEntity.setBoardHits(0);
+        return boardEntity;
+    }
 }
