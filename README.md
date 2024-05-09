@@ -28,3 +28,13 @@
     - 게시글 14
       - 한 페이지에 5개씩 => 3개
       - 한 페이지에 3개씩 => 5개
+7. 파일(이미지)첨부하기
+    - 단일 파일 첨부
+    - 다중 파일 첨부
+    - 파일 첨부와 관련하여 추가될 부분들
+      - save.html
+      - BoardDTO
+      - BOARDService.save()
+      - BoardEntity
+      - BoardFileEntity, BoardFileRepository 추가
+      - detail.html
