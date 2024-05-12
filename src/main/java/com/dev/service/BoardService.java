@@ -2,6 +2,8 @@ package com.dev.service;
 
 import com.dev.dto.BoardDTO;
 import com.dev.entity.BoardEntity;
+import com.dev.entity.BoardFileEntity;
+import com.dev.repository.BoardFileRepository;
 import com.dev.repository.BoardRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -26,6 +28,7 @@ import java.util.Optional;
 public class BoardService {
 
     private final BoardRepository boardRepository;
+    private final BoardFileRepository boardFileRepository;
 
     public void save(BoardDTO boardDTO) throws IOException {
         // 파일 첨부 여부에 따라 로직 분리
@@ -50,7 +53,12 @@ public class BoardService {
             String storedFileName = System.currentTimeMillis() + " " + originalFilename; // 3
             String savePath = "C:/dev/images/" + storedFileName; // 4
             boardFile.transferTo(new File(savePath)); // 5
+            BoardEntity boardEntity = BoardEntity.toSaveFileEntity(boardDTO);
+            Long savedId = boardRepository.save(boardEntity).getId();
+            BoardEntity board = boardRepository.findById(savedId).get();
 
+            BoardFileEntity boardFileEntity = BoardFileEntity.toBoardFileEntity(board, originalFilename, storedFileName);
+            boardFileRepository.save(boardFileEntity);
         }
     }
 
