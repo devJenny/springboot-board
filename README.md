@@ -38,3 +38,9 @@
       - BoardEntity
       - BoardFileEntity, BoardFileRepository 추가
       - detail.html
+8. 댓글처리
+    - 글 상세 페이지에서 댓글 입력 (ajax)
+        - ajax 다뤄보기 재생목록
+    - 상세조회할 때 기존에 작성된 댓글 목록 보임
+    - 댓글 입력하면 기존 댓글 목록에 새로 작성한 댓글 추가
+    - 댓글용 테이블 필요
