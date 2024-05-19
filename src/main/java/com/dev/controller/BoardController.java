@@ -70,8 +70,8 @@ public class BoardController {
 
     @PostMapping("/update")
     public String update(@ModelAttribute BoardDTO boardDTO, Model model) {
-        BoardDTO BoardDTO = boardService.update(boardDTO);
-        model.addAttribute("board", boardDTO);
+        BoardDTO boardDTOs = boardService.update(boardDTO);
+        model.addAttribute("board", boardDTOs);
         return "detail";
     }
 
