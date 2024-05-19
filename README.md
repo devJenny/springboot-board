@@ -44,3 +44,22 @@
     - 상세조회할 때 기존에 작성된 댓글 목록 보임
     - 댓글 입력하면 기존 댓글 목록에 새로 작성한 댓글 추가
     - 댓글용 테이블 필요
+---
+![img.png](src/main/resources/static/images/main.png)
+- 메인 화면
+<br>
+
+![img.png](src/main/resources/static/images/save.png)
+- 글 작성
+
+![img.png](src/main/resources/static/images/list.png)
+- 글 목록
+
+![img.png](src/main/resources/static/images/detail.png)
+- 상세화면
+
+![img.png](src/main/resources/static/images/comment.png)
+- 댓글 작성
+
+![img.png](src/main/resources/static/images/paging.png)
+- 페이징
